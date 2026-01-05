@@ -1,0 +1,10 @@
+Log created on: 2026-01-05 17:05:09
+
+local reparametrization used: False
+eval_episodes: 100
+kl: 6.737330436706543
+NR_type: informative
+Non-recursive invkl bound: {'emploss': 10286.662623261931, 'fullloss': 15257.800176619297, 'rightside': 0.0018821991068517909}
+Test loss: 8706.87109375
+Train loss: 10627.322265625
+_NR_n_bound: 8305

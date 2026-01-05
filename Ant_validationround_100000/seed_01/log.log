@@ -1,0 +1,448 @@
+03-12 09:18-17 INFO     Experiment with seed no 1
+03-12 09:18-17 INFO     Args: 
+Namespace(env='ant', model='validationround', n_hidden=256, depth_actor=3, width_actor=256, no_norm_actor=False, act_actor='crelu', depth_critic=3, width_critic=256, no_norm_critic=False, act_critic='crelu', verbose=False, progress=False, tensorboard=False, n_critics=10, reduce='min', tau=0.005, gamma=0.99, alpha=1.0, p=1.0, delta=0.25, policy_delay=1, validationrounds=True, saveparams=False, savedstep=100000, max_steps=200, warmup_steps=0, batch_size=256, learning_rate=0.0003, bootstrap_rate=0.05, posterior_sampling_rate=5, max_episodes=99999999, prior_variance=1.0, prior_mean='min', prior_scale=5.0, exploration_type='boltzmann', beta=0.1, bound_type='catoni', explore_noise=0.1, complexity_coef=0.01, num_shooting=500, util_coef=-1.0, kappa_critic=-0.831559, kappa_actor=-0.831559, n_targets_drnd=10, dqn_l2_reg=1.0, reset_frequency=0, learn_frequency=1, max_iter=1, n_epochs=0, report_frequency=100, eval_episodes=1, eval_frequency=1, buffer_size=100000, num_threads=-1, seed=1, runid=999, uniqueid=False, result_path='_logs', reporter_save_frequency=5000, reporter_average_last_k=1, render=False, render_frequency=10, noisy_act=0.0, noisy_obs=0.0, no_deprecate=False, device=device(type='cuda'), dims={'state': (100000, 27), 'action': (100000, 8), 'next_state': (100000, 27), 'reward': 100000, 'terminated': 100000, 'step': 100000})
+03-12 09:18-17 INFO     Model: 
+ValidationRound(
+  (critics): REDQCritics(
+    (loss): HuberLoss()
+    (base_model): CriticNet(
+      (arch): Sequential(
+        (0): Linear(in_features=35, out_features=256, bias=True)
+        (1): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (2): CReLU()
+        (3): Linear(in_features=512, out_features=256, bias=True)
+        (4): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (5): CReLU()
+        (6): Linear(in_features=512, out_features=1, bias=True)
+      )
+    )
+    (base_target): CriticNet(
+      (arch): Sequential(
+        (0): Linear(in_features=35, out_features=256, bias=True)
+        (1): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (2): CReLU()
+        (3): Linear(in_features=512, out_features=256, bias=True)
+        (4): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (5): CReLU()
+        (6): Linear(in_features=512, out_features=1, bias=True)
+      )
+    )
+  )
+  (actor): SoftActor(
+    (model): ActorNetProbabilistic(
+      (arch): Sequential(
+        (0): Linear(in_features=27, out_features=256, bias=True)
+        (1): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (2): CReLU()
+        (3): Linear(in_features=512, out_features=256, bias=True)
+        (4): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (5): CReLU()
+        (6): Linear(in_features=512, out_features=16, bias=True)
+      )
+      (head): SquashedGaussianHead()
+    )
+  )
+)
+03-12 09:18-17 CRITICAL EVALUATION	N-steps:       0	Men_Reward:   3590.913	IQM_Reward:   3590.913
+03-12 09:18-17 CRITICAL EVALUATION 	 starting state:0.06729314476251602	N-steps:       0	Reward:    359.980	Q-value:     -0.370
+03-12 09:18-18 CRITICAL EVALUATION	N-steps:       1	Men_Reward:   3356.231	IQM_Reward:   3356.231
+03-12 09:18-18 CRITICAL EVALUATION 	 starting state:0.03985413908958435	N-steps:       1	Reward:    306.471	Q-value:     -0.305
+03-12 09:18-18 CRITICAL EVALUATION	N-steps:       2	Men_Reward:   3409.635	IQM_Reward:   3409.635
+03-12 09:18-19 CRITICAL EVALUATION 	 starting state:0.07212458550930023	N-steps:       2	Reward:    317.989	Q-value:     -0.581
+03-12 09:18-19 CRITICAL EVALUATION	N-steps:       3	Men_Reward:   3742.548	IQM_Reward:   3742.548
+03-12 09:18-19 CRITICAL EVALUATION 	 starting state:0.06518635898828506	N-steps:       3	Reward:    343.293	Q-value:     -0.461
+03-12 09:18-20 CRITICAL EVALUATION	N-steps:       4	Men_Reward:   2297.315	IQM_Reward:   2297.315
+03-12 09:18-20 CRITICAL EVALUATION 	 starting state:0.06035294756293297	N-steps:       4	Reward:    323.867	Q-value:     -0.430
+03-12 09:18-20 CRITICAL EVALUATION	N-steps:       5	Men_Reward:   1612.606	IQM_Reward:   1612.606
+03-12 09:18-20 CRITICAL EVALUATION 	 starting state:0.044177427887916565	N-steps:       5	Reward:    319.447	Q-value:     -0.524
+03-12 09:18-21 CRITICAL EVALUATION	N-steps:       6	Men_Reward:   3685.947	IQM_Reward:   3685.947
+03-12 09:18-21 CRITICAL EVALUATION 	 starting state:0.043383244425058365	N-steps:       6	Reward:    322.841	Q-value:     -0.326
+03-12 09:18-21 CRITICAL EVALUATION	N-steps:       7	Men_Reward:    169.558	IQM_Reward:    169.558
+03-12 09:18-21 CRITICAL EVALUATION 	 starting state:0.04546966403722763	N-steps:       7	Reward:    125.596	Q-value:     -0.416
+03-12 09:18-21 CRITICAL EVALUATION	N-steps:       8	Men_Reward:   3666.332	IQM_Reward:   3666.332
+03-12 09:18-21 CRITICAL EVALUATION 	 starting state:0.05311541259288788	N-steps:       8	Reward:    348.908	Q-value:     -0.179
+03-12 09:18-22 CRITICAL EVALUATION	N-steps:       9	Men_Reward:   3605.017	IQM_Reward:   3605.017
+03-12 09:18-22 CRITICAL EVALUATION 	 starting state:0.06437863409519196	N-steps:       9	Reward:    336.563	Q-value:     -0.222
+03-12 09:18-23 CRITICAL EVALUATION	N-steps:      10	Men_Reward:   3073.061	IQM_Reward:   3073.061
+03-12 09:18-23 CRITICAL EVALUATION 	 starting state:0.06882161647081375	N-steps:      10	Reward:    331.337	Q-value:     -0.627
+03-12 09:18-23 CRITICAL EVALUATION	N-steps:      11	Men_Reward:   3434.261	IQM_Reward:   3434.261
+03-12 09:18-23 CRITICAL EVALUATION 	 starting state:0.0690498948097229	N-steps:      11	Reward:    320.275	Q-value:     -0.439
+03-12 09:18-24 CRITICAL EVALUATION	N-steps:      12	Men_Reward:   3503.181	IQM_Reward:   3503.181
+03-12 09:18-24 CRITICAL EVALUATION 	 starting state:0.07221683114767075	N-steps:      12	Reward:    321.594	Q-value:     -0.450
+03-12 09:18-24 CRITICAL EVALUATION	N-steps:      13	Men_Reward:   3046.071	IQM_Reward:   3046.071
+03-12 09:18-24 CRITICAL EVALUATION 	 starting state:0.04770248383283615	N-steps:      13	Reward:    356.466	Q-value:     -0.363
+03-12 09:18-25 CRITICAL EVALUATION	N-steps:      14	Men_Reward:   3664.041	IQM_Reward:   3664.041
+03-12 09:18-25 CRITICAL EVALUATION 	 starting state:0.07831740379333496	N-steps:      14	Reward:    326.633	Q-value:     -0.537
+03-12 09:18-26 CRITICAL EVALUATION	N-steps:      15	Men_Reward:   3689.494	IQM_Reward:   3689.494
+03-12 09:18-26 CRITICAL EVALUATION 	 starting state:0.061008285731077194	N-steps:      15	Reward:    324.158	Q-value:     -0.359
+03-12 09:18-26 CRITICAL EVALUATION	N-steps:      16	Men_Reward:   3717.514	IQM_Reward:   3717.514
+03-12 09:18-26 CRITICAL EVALUATION 	 starting state:0.05950608849525452	N-steps:      16	Reward:    346.418	Q-value:     -0.560
+03-12 09:18-27 CRITICAL EVALUATION	N-steps:      17	Men_Reward:   3478.944	IQM_Reward:   3478.944
+03-12 09:18-27 CRITICAL EVALUATION 	 starting state:0.08920897543430328	N-steps:      17	Reward:    267.406	Q-value:     -0.567
+03-12 09:18-27 CRITICAL EVALUATION	N-steps:      18	Men_Reward:   3538.190	IQM_Reward:   3538.190
+03-12 09:18-27 CRITICAL EVALUATION 	 starting state:0.06401881575584412	N-steps:      18	Reward:    294.505	Q-value:     -0.298
+03-12 09:18-28 CRITICAL EVALUATION	N-steps:      19	Men_Reward:    370.050	IQM_Reward:    370.050
+03-12 09:18-28 CRITICAL EVALUATION 	 starting state:0.08861589431762695	N-steps:      19	Reward:    212.510	Q-value:     -0.447
+03-12 09:18-28 CRITICAL EVALUATION	N-steps:      20	Men_Reward:   3547.350	IQM_Reward:   3547.350
+03-12 09:18-28 CRITICAL EVALUATION 	 starting state:0.04482240974903107	N-steps:      20	Reward:    330.651	Q-value:     -0.564
+03-12 09:18-29 CRITICAL EVALUATION	N-steps:      21	Men_Reward:   2025.145	IQM_Reward:   2025.145
+03-12 09:18-29 CRITICAL EVALUATION 	 starting state:0.051622990518808365	N-steps:      21	Reward:    291.231	Q-value:     -0.400
+03-12 09:18-29 CRITICAL EVALUATION	N-steps:      22	Men_Reward:   1860.144	IQM_Reward:   1860.144
+03-12 09:18-29 CRITICAL EVALUATION 	 starting state:0.06056493893265724	N-steps:      22	Reward:    295.302	Q-value:     -0.414
+03-12 09:18-30 CRITICAL EVALUATION	N-steps:      23	Men_Reward:   3431.835	IQM_Reward:   3431.835
+03-12 09:18-30 CRITICAL EVALUATION 	 starting state:0.04666614532470703	N-steps:      23	Reward:    322.685	Q-value:     -0.558
+03-12 09:18-30 CRITICAL EVALUATION	N-steps:      24	Men_Reward:   3326.242	IQM_Reward:   3326.242
+03-12 09:18-30 CRITICAL EVALUATION 	 starting state:0.0613783597946167	N-steps:      24	Reward:    348.902	Q-value:     -0.398
+03-12 09:18-31 CRITICAL EVALUATION	N-steps:      25	Men_Reward:   3694.376	IQM_Reward:   3694.376
+03-12 09:18-31 CRITICAL EVALUATION 	 starting state:0.05219966918230057	N-steps:      25	Reward:    335.629	Q-value:     -0.384
+03-12 09:18-31 CRITICAL EVALUATION	N-steps:      26	Men_Reward:   2077.545	IQM_Reward:   2077.545
+03-12 09:18-31 CRITICAL EVALUATION 	 starting state:0.014968124218285084	N-steps:      26	Reward:    269.005	Q-value:     -0.237
+03-12 09:18-31 CRITICAL EVALUATION	N-steps:      27	Men_Reward:     88.920	IQM_Reward:     88.920
+03-12 09:18-31 CRITICAL EVALUATION 	 starting state:0.07360517978668213	N-steps:      27	Reward:     70.814	Q-value:     -0.335
+03-12 09:18-32 CRITICAL EVALUATION	N-steps:      28	Men_Reward:   1767.293	IQM_Reward:   1767.293
+03-12 09:18-32 CRITICAL EVALUATION 	 starting state:0.05303880199790001	N-steps:      28	Reward:    314.738	Q-value:     -0.269
+03-12 09:18-32 CRITICAL EVALUATION	N-steps:      29	Men_Reward:   2486.661	IQM_Reward:   2486.661
+03-12 09:18-32 CRITICAL EVALUATION 	 starting state:0.07560381293296814	N-steps:      29	Reward:    305.876	Q-value:     -0.492
+03-12 09:18-33 CRITICAL EVALUATION	N-steps:      30	Men_Reward:   1602.344	IQM_Reward:   1602.344
+03-12 09:18-33 CRITICAL EVALUATION 	 starting state:0.08764833956956863	N-steps:      30	Reward:    277.756	Q-value:     -0.526
+03-12 09:18-33 CRITICAL EVALUATION	N-steps:      31	Men_Reward:   1327.265	IQM_Reward:   1327.265
+03-12 09:18-33 CRITICAL EVALUATION 	 starting state:0.06662105023860931	N-steps:      31	Reward:    293.713	Q-value:     -0.509
+03-12 09:18-34 CRITICAL EVALUATION	N-steps:      32	Men_Reward:   3558.409	IQM_Reward:   3558.409
+03-12 09:18-34 CRITICAL EVALUATION 	 starting state:0.05288338288664818	N-steps:      32	Reward:    297.426	Q-value:     -0.479
+03-12 09:18-34 CRITICAL EVALUATION	N-steps:      33	Men_Reward:   3616.304	IQM_Reward:   3616.304
+03-12 09:18-34 CRITICAL EVALUATION 	 starting state:0.053562380373477936	N-steps:      33	Reward:    348.465	Q-value:     -0.473
+03-12 09:18-35 CRITICAL EVALUATION	N-steps:      34	Men_Reward:   3699.790	IQM_Reward:   3699.790
+03-12 09:18-35 CRITICAL EVALUATION 	 starting state:0.055711496621370316	N-steps:      34	Reward:    334.228	Q-value:     -0.351
+03-12 09:18-35 CRITICAL EVALUATION	N-steps:      35	Men_Reward:     80.819	IQM_Reward:     80.819
+03-12 09:18-35 CRITICAL EVALUATION 	 starting state:0.027880050241947174	N-steps:      35	Reward:     65.072	Q-value:     -0.384
+03-12 09:18-36 CRITICAL EVALUATION	N-steps:      36	Men_Reward:   3493.656	IQM_Reward:   3493.656
+03-12 09:18-36 CRITICAL EVALUATION 	 starting state:0.04604735225439072	N-steps:      36	Reward:    336.295	Q-value:     -0.362
+03-12 09:18-36 CRITICAL EVALUATION	N-steps:      37	Men_Reward:   1588.797	IQM_Reward:   1588.797
+03-12 09:18-36 CRITICAL EVALUATION 	 starting state:0.07562962919473648	N-steps:      37	Reward:    324.964	Q-value:     -0.332
+03-12 09:18-37 CRITICAL EVALUATION	N-steps:      38	Men_Reward:   2472.303	IQM_Reward:   2472.303
+03-12 09:18-37 CRITICAL EVALUATION 	 starting state:0.07796211540699005	N-steps:      38	Reward:    361.584	Q-value:     -0.437
+03-12 09:18-38 CRITICAL EVALUATION	N-steps:      39	Men_Reward:   3775.289	IQM_Reward:   3775.289
+03-12 09:18-38 CRITICAL EVALUATION 	 starting state:0.0707000195980072	N-steps:      39	Reward:    328.801	Q-value:     -0.337
+03-12 09:18-38 CRITICAL EVALUATION	N-steps:      40	Men_Reward:   3699.232	IQM_Reward:   3699.232
+03-12 09:18-38 CRITICAL EVALUATION 	 starting state:0.09447207301855087	N-steps:      40	Reward:    350.483	Q-value:     -0.571
+03-12 09:18-38 CRITICAL EVALUATION	N-steps:      41	Men_Reward:    307.998	IQM_Reward:    307.998
+03-12 09:18-38 CRITICAL EVALUATION 	 starting state:0.057575058192014694	N-steps:      41	Reward:    191.078	Q-value:     -0.522
+03-12 09:18-39 CRITICAL EVALUATION	N-steps:      42	Men_Reward:   3677.372	IQM_Reward:   3677.372
+03-12 09:18-39 CRITICAL EVALUATION 	 starting state:0.05650957301259041	N-steps:      42	Reward:    331.233	Q-value:     -0.672
+03-12 09:18-40 CRITICAL EVALUATION	N-steps:      43	Men_Reward:   3729.990	IQM_Reward:   3729.990
+03-12 09:18-40 CRITICAL EVALUATION 	 starting state:0.054541971534490585	N-steps:      43	Reward:    350.599	Q-value:     -0.643
+03-12 09:18-40 CRITICAL EVALUATION	N-steps:      44	Men_Reward:   3684.614	IQM_Reward:   3684.614
+03-12 09:18-40 CRITICAL EVALUATION 	 starting state:0.06098300218582153	N-steps:      44	Reward:    359.019	Q-value:     -0.519
+03-12 09:18-41 CRITICAL EVALUATION	N-steps:      45	Men_Reward:   3681.204	IQM_Reward:   3681.204
+03-12 09:18-41 CRITICAL EVALUATION 	 starting state:0.059587735682725906	N-steps:      45	Reward:    296.418	Q-value:     -0.421
+03-12 09:18-41 CRITICAL EVALUATION	N-steps:      46	Men_Reward:   3663.192	IQM_Reward:   3663.192
+03-12 09:18-41 CRITICAL EVALUATION 	 starting state:0.09016437083482742	N-steps:      46	Reward:    330.549	Q-value:     -0.361
+03-12 09:18-42 CRITICAL EVALUATION	N-steps:      47	Men_Reward:   3706.367	IQM_Reward:   3706.367
+03-12 09:18-42 CRITICAL EVALUATION 	 starting state:0.09245136380195618	N-steps:      47	Reward:    341.975	Q-value:     -0.411
+03-12 09:18-43 CRITICAL EVALUATION	N-steps:      48	Men_Reward:   3885.330	IQM_Reward:   3885.330
+03-12 09:18-43 CRITICAL EVALUATION 	 starting state:0.07140456140041351	N-steps:      48	Reward:    348.377	Q-value:     -0.683
+03-12 09:18-43 CRITICAL EVALUATION	N-steps:      49	Men_Reward:   1157.969	IQM_Reward:   1157.969
+03-12 09:18-43 CRITICAL EVALUATION 	 starting state:0.0786837637424469	N-steps:      49	Reward:    332.550	Q-value:     -0.489
+03-12 09:18-43 CRITICAL EVALUATION	N-steps:      50	Men_Reward:   3559.253	IQM_Reward:   3559.253
+03-12 09:18-43 CRITICAL EVALUATION 	 starting state:0.09088101238012314	N-steps:      50	Reward:    354.057	Q-value:     -0.533
+03-12 09:18-44 CRITICAL EVALUATION	N-steps:      51	Men_Reward:   2656.342	IQM_Reward:   2656.342
+03-12 09:18-44 CRITICAL EVALUATION 	 starting state:0.06964211910963058	N-steps:      51	Reward:    357.037	Q-value:     -0.462
+03-12 09:18-45 CRITICAL EVALUATION	N-steps:      52	Men_Reward:   1684.635	IQM_Reward:   1684.635
+03-12 09:18-45 CRITICAL EVALUATION 	 starting state:0.07834797352552414	N-steps:      52	Reward:    334.633	Q-value:     -0.483
+03-12 09:18-45 CRITICAL EVALUATION	N-steps:      53	Men_Reward:   3451.822	IQM_Reward:   3451.822
+03-12 09:18-45 CRITICAL EVALUATION 	 starting state:0.05649089068174362	N-steps:      53	Reward:    333.977	Q-value:     -0.458
+03-12 09:18-46 CRITICAL EVALUATION	N-steps:      54	Men_Reward:   3688.012	IQM_Reward:   3688.012
+03-12 09:18-46 CRITICAL EVALUATION 	 starting state:0.07021570205688477	N-steps:      54	Reward:    322.702	Q-value:     -0.534
+03-12 09:18-46 CRITICAL EVALUATION	N-steps:      55	Men_Reward:   3449.950	IQM_Reward:   3449.950
+03-12 09:18-46 CRITICAL EVALUATION 	 starting state:0.05751188471913338	N-steps:      55	Reward:    289.951	Q-value:     -0.444
+03-12 09:18-47 CRITICAL EVALUATION	N-steps:      56	Men_Reward:   3880.177	IQM_Reward:   3880.177
+03-12 09:18-47 CRITICAL EVALUATION 	 starting state:0.06995892524719238	N-steps:      56	Reward:    361.606	Q-value:     -0.459
+03-12 09:18-48 CRITICAL EVALUATION	N-steps:      57	Men_Reward:   3671.812	IQM_Reward:   3671.812
+03-12 09:18-48 CRITICAL EVALUATION 	 starting state:0.053487733006477356	N-steps:      57	Reward:    315.957	Q-value:     -0.472
+03-12 09:18-48 CRITICAL EVALUATION	N-steps:      58	Men_Reward:   3737.008	IQM_Reward:   3737.008
+03-12 09:18-48 CRITICAL EVALUATION 	 starting state:0.061753638088703156	N-steps:      58	Reward:    299.666	Q-value:     -0.282
+03-12 09:18-49 CRITICAL EVALUATION	N-steps:      59	Men_Reward:   3515.482	IQM_Reward:   3515.482
+03-12 09:18-49 CRITICAL EVALUATION 	 starting state:0.05234765633940697	N-steps:      59	Reward:    321.384	Q-value:     -0.641
+03-12 09:18-49 CRITICAL EVALUATION	N-steps:      60	Men_Reward:   1575.813	IQM_Reward:   1575.813
+03-12 09:18-49 CRITICAL EVALUATION 	 starting state:0.050158191472291946	N-steps:      60	Reward:    335.007	Q-value:     -0.578
+03-12 09:18-50 CRITICAL EVALUATION	N-steps:      61	Men_Reward:   3492.072	IQM_Reward:   3492.072
+03-12 09:18-50 CRITICAL EVALUATION 	 starting state:0.06309996545314789	N-steps:      61	Reward:    325.589	Q-value:     -0.369
+03-12 09:18-51 CRITICAL EVALUATION	N-steps:      62	Men_Reward:   3696.898	IQM_Reward:   3696.898
+03-12 09:18-51 CRITICAL EVALUATION 	 starting state:0.07508134096860886	N-steps:      62	Reward:    349.041	Q-value:     -0.446
+03-12 09:18-51 CRITICAL EVALUATION	N-steps:      63	Men_Reward:   3385.243	IQM_Reward:   3385.243
+03-12 09:18-51 CRITICAL EVALUATION 	 starting state:0.06507934629917145	N-steps:      63	Reward:    342.583	Q-value:     -0.413
+03-12 09:18-52 CRITICAL EVALUATION	N-steps:      64	Men_Reward:   2343.468	IQM_Reward:   2343.468
+03-12 09:18-52 CRITICAL EVALUATION 	 starting state:0.0506976917386055	N-steps:      64	Reward:    327.318	Q-value:     -0.594
+03-12 09:18-52 CRITICAL EVALUATION	N-steps:      65	Men_Reward:   3989.671	IQM_Reward:   3989.671
+03-12 09:18-52 CRITICAL EVALUATION 	 starting state:0.04922787845134735	N-steps:      65	Reward:    348.282	Q-value:     -0.366
+03-12 09:18-53 CRITICAL EVALUATION	N-steps:      66	Men_Reward:   3374.741	IQM_Reward:   3374.741
+03-12 09:18-53 CRITICAL EVALUATION 	 starting state:0.06848309189081192	N-steps:      66	Reward:    334.182	Q-value:     -0.470
+03-12 09:18-53 CRITICAL EVALUATION	N-steps:      67	Men_Reward:   1045.094	IQM_Reward:   1045.094
+03-12 09:18-53 CRITICAL EVALUATION 	 starting state:0.08733425289392471	N-steps:      67	Reward:    296.575	Q-value:     -0.412
+03-12 09:18-54 CRITICAL EVALUATION	N-steps:      68	Men_Reward:   3809.216	IQM_Reward:   3809.216
+03-12 09:18-54 CRITICAL EVALUATION 	 starting state:0.07111884653568268	N-steps:      68	Reward:    376.357	Q-value:     -0.477
+03-12 09:18-54 CRITICAL EVALUATION	N-steps:      69	Men_Reward:    269.489	IQM_Reward:    269.489
+03-12 09:18-54 CRITICAL EVALUATION 	 starting state:0.058385804295539856	N-steps:      69	Reward:    179.057	Q-value:     -0.363
+03-12 09:18-55 CRITICAL EVALUATION	N-steps:      70	Men_Reward:   3711.212	IQM_Reward:   3711.212
+03-12 09:18-55 CRITICAL EVALUATION 	 starting state:0.08939794450998306	N-steps:      70	Reward:    346.507	Q-value:     -0.447
+03-12 09:18-55 CRITICAL EVALUATION	N-steps:      71	Men_Reward:    377.129	IQM_Reward:    377.129
+03-12 09:18-55 CRITICAL EVALUATION 	 starting state:0.074244923889637	N-steps:      71	Reward:    184.226	Q-value:     -0.492
+03-12 09:18-55 CRITICAL EVALUATION	N-steps:      72	Men_Reward:   1257.646	IQM_Reward:   1257.646
+03-12 09:18-55 CRITICAL EVALUATION 	 starting state:0.07956252247095108	N-steps:      72	Reward:    324.096	Q-value:     -0.236
+03-12 09:18-56 CRITICAL EVALUATION	N-steps:      73	Men_Reward:   3445.468	IQM_Reward:   3445.468
+03-12 09:18-56 CRITICAL EVALUATION 	 starting state:0.07477306574583054	N-steps:      73	Reward:    330.360	Q-value:     -0.587
+03-12 09:18-56 CRITICAL EVALUATION	N-steps:      74	Men_Reward:   1665.487	IQM_Reward:   1665.487
+03-12 09:18-56 CRITICAL EVALUATION 	 starting state:0.07083426415920258	N-steps:      74	Reward:    358.040	Q-value:     -0.512
+03-12 09:18-57 CRITICAL EVALUATION	N-steps:      75	Men_Reward:   2556.499	IQM_Reward:   2556.499
+03-12 09:18-57 CRITICAL EVALUATION 	 starting state:0.07279714941978455	N-steps:      75	Reward:    315.065	Q-value:     -0.492
+03-12 09:18-57 CRITICAL EVALUATION	N-steps:      76	Men_Reward:   3544.205	IQM_Reward:   3544.205
+03-12 09:18-57 CRITICAL EVALUATION 	 starting state:0.0715051218867302	N-steps:      76	Reward:    313.470	Q-value:     -0.501
+03-12 09:18-58 CRITICAL EVALUATION	N-steps:      77	Men_Reward:   3753.431	IQM_Reward:   3753.431
+03-12 09:18-58 CRITICAL EVALUATION 	 starting state:0.05312633514404297	N-steps:      77	Reward:    345.225	Q-value:     -0.453
+03-12 09:18-59 CRITICAL EVALUATION	N-steps:      78	Men_Reward:   3466.456	IQM_Reward:   3466.456
+03-12 09:18-59 CRITICAL EVALUATION 	 starting state:0.0689324289560318	N-steps:      78	Reward:    311.704	Q-value:     -0.520
+03-12 09:18-59 CRITICAL EVALUATION	N-steps:      79	Men_Reward:    961.130	IQM_Reward:    961.130
+03-12 09:18-59 CRITICAL EVALUATION 	 starting state:0.05395752564072609	N-steps:      79	Reward:    270.118	Q-value:     -0.512
+03-12 09:18-59 CRITICAL EVALUATION	N-steps:      80	Men_Reward:    582.348	IQM_Reward:    582.348
+03-12 09:18-59 CRITICAL EVALUATION 	 starting state:0.05291952192783356	N-steps:      80	Reward:    257.224	Q-value:     -0.428
+03-12 09:19-00 CRITICAL EVALUATION	N-steps:      81	Men_Reward:   3573.425	IQM_Reward:   3573.425
+03-12 09:19-00 CRITICAL EVALUATION 	 starting state:0.10342025011777878	N-steps:      81	Reward:    304.215	Q-value:     -0.390
+03-12 09:19-00 CRITICAL EVALUATION	N-steps:      82	Men_Reward:   3543.255	IQM_Reward:   3543.255
+03-12 09:19-00 CRITICAL EVALUATION 	 starting state:0.03766048327088356	N-steps:      82	Reward:    325.806	Q-value:     -0.399
+03-12 09:19-01 CRITICAL EVALUATION	N-steps:      83	Men_Reward:   3677.744	IQM_Reward:   3677.744
+03-12 09:19-01 CRITICAL EVALUATION 	 starting state:0.08253812044858932	N-steps:      83	Reward:    306.873	Q-value:     -0.445
+03-12 09:19-01 CRITICAL EVALUATION	N-steps:      84	Men_Reward:   1384.822	IQM_Reward:   1384.822
+03-12 09:19-01 CRITICAL EVALUATION 	 starting state:0.07498512417078018	N-steps:      84	Reward:    311.569	Q-value:     -0.371
+03-12 09:19-02 CRITICAL EVALUATION	N-steps:      85	Men_Reward:   3488.572	IQM_Reward:   3488.572
+03-12 09:19-02 CRITICAL EVALUATION 	 starting state:0.06906948983669281	N-steps:      85	Reward:    291.404	Q-value:     -0.557
+03-12 09:19-02 CRITICAL EVALUATION	N-steps:      86	Men_Reward:   3575.000	IQM_Reward:   3575.000
+03-12 09:19-02 CRITICAL EVALUATION 	 starting state:0.05331119894981384	N-steps:      86	Reward:    323.989	Q-value:     -0.424
+03-12 09:19-03 CRITICAL EVALUATION	N-steps:      87	Men_Reward:   3678.363	IQM_Reward:   3678.363
+03-12 09:19-03 CRITICAL EVALUATION 	 starting state:0.057866357266902924	N-steps:      87	Reward:    277.810	Q-value:     -0.386
+03-12 09:19-04 CRITICAL EVALUATION	N-steps:      88	Men_Reward:   3540.441	IQM_Reward:   3540.441
+03-12 09:19-04 CRITICAL EVALUATION 	 starting state:0.07612365484237671	N-steps:      88	Reward:    333.762	Q-value:     -0.342
+03-12 09:19-04 CRITICAL EVALUATION	N-steps:      89	Men_Reward:   3852.069	IQM_Reward:   3852.069
+03-12 09:19-04 CRITICAL EVALUATION 	 starting state:0.08913424611091614	N-steps:      89	Reward:    358.670	Q-value:     -0.480
+03-12 09:19-05 CRITICAL EVALUATION	N-steps:      90	Men_Reward:   3525.093	IQM_Reward:   3525.093
+03-12 09:19-05 CRITICAL EVALUATION 	 starting state:0.06508365273475647	N-steps:      90	Reward:    343.958	Q-value:     -0.516
+03-12 09:19-05 CRITICAL EVALUATION	N-steps:      91	Men_Reward:   3432.309	IQM_Reward:   3432.309
+03-12 09:19-06 CRITICAL EVALUATION 	 starting state:0.05837376043200493	N-steps:      91	Reward:    324.034	Q-value:     -0.383
+03-12 09:19-06 CRITICAL EVALUATION	N-steps:      92	Men_Reward:   3691.914	IQM_Reward:   3691.914
+03-12 09:19-06 CRITICAL EVALUATION 	 starting state:0.0639955997467041	N-steps:      92	Reward:    355.558	Q-value:     -0.439
+03-12 09:19-07 CRITICAL EVALUATION	N-steps:      93	Men_Reward:   3377.444	IQM_Reward:   3377.444
+03-12 09:19-07 CRITICAL EVALUATION 	 starting state:0.035306837409734726	N-steps:      93	Reward:    300.745	Q-value:     -0.374
+03-12 09:19-07 CRITICAL EVALUATION	N-steps:      94	Men_Reward:   3098.614	IQM_Reward:   3098.614
+03-12 09:19-07 CRITICAL EVALUATION 	 starting state:0.0662749782204628	N-steps:      94	Reward:    337.915	Q-value:     -0.470
+03-12 09:19-08 CRITICAL EVALUATION	N-steps:      95	Men_Reward:    102.821	IQM_Reward:    102.821
+03-12 09:19-08 CRITICAL EVALUATION 	 starting state:0.08680667728185654	N-steps:      95	Reward:     79.849	Q-value:     -0.357
+03-12 09:19-08 CRITICAL EVALUATION	N-steps:      96	Men_Reward:   3463.049	IQM_Reward:   3463.049
+03-12 09:19-08 CRITICAL EVALUATION 	 starting state:0.055166855454444885	N-steps:      96	Reward:    368.708	Q-value:     -0.523
+03-12 09:19-09 CRITICAL EVALUATION	N-steps:      97	Men_Reward:   3681.786	IQM_Reward:   3681.786
+03-12 09:19-09 CRITICAL EVALUATION 	 starting state:0.10860162228345871	N-steps:      97	Reward:    348.251	Q-value:     -0.535
+03-12 09:19-09 CRITICAL EVALUATION	N-steps:      98	Men_Reward:   3605.696	IQM_Reward:   3605.696
+03-12 09:19-09 CRITICAL EVALUATION 	 starting state:0.06453079730272293	N-steps:      98	Reward:    344.811	Q-value:     -0.388
+03-12 09:19-10 CRITICAL EVALUATION	N-steps:      99	Men_Reward:    108.475	IQM_Reward:    108.475
+03-12 09:19-10 CRITICAL EVALUATION 	 starting state:0.08491417020559311	N-steps:      99	Reward:     77.766	Q-value:     -0.470
+03-12 09:19-10 CRITICAL EVALUATION	N-steps:     100	Men_Reward:   3522.407	IQM_Reward:   3522.407
+03-12 09:19-10 CRITICAL EVALUATION 	 starting state:0.05491063371300697	N-steps:     100	Reward:    341.327	Q-value:     -0.518
+03-12 09:19-11 CRITICAL EVALUATION	N-steps:     101	Men_Reward:   3594.142	IQM_Reward:   3594.142
+03-12 09:19-11 CRITICAL EVALUATION 	 starting state:0.048397064208984375	N-steps:     101	Reward:    351.586	Q-value:     -0.392
+03-12 09:19-11 CRITICAL EVALUATION	N-steps:     102	Men_Reward:    796.833	IQM_Reward:    796.833
+03-12 09:19-11 CRITICAL EVALUATION 	 starting state:0.05714169144630432	N-steps:     102	Reward:    285.629	Q-value:     -0.429
+03-12 09:19-12 CRITICAL EVALUATION	N-steps:     103	Men_Reward:   3464.721	IQM_Reward:   3464.721
+03-12 09:19-12 CRITICAL EVALUATION 	 starting state:0.059092581272125244	N-steps:     103	Reward:    340.412	Q-value:     -0.508
+03-12 09:19-12 CRITICAL EVALUATION	N-steps:     104	Men_Reward:   3656.490	IQM_Reward:   3656.490
+03-12 09:19-12 CRITICAL EVALUATION 	 starting state:0.05736837536096573	N-steps:     104	Reward:    284.091	Q-value:     -0.439
+03-12 09:19-13 CRITICAL EVALUATION	N-steps:     105	Men_Reward:   3481.678	IQM_Reward:   3481.678
+03-12 09:19-13 CRITICAL EVALUATION 	 starting state:0.045953698456287384	N-steps:     105	Reward:    340.242	Q-value:     -0.466
+03-12 09:19-13 CRITICAL EVALUATION	N-steps:     106	Men_Reward:   1365.949	IQM_Reward:   1365.949
+03-12 09:19-13 CRITICAL EVALUATION 	 starting state:0.09177961200475693	N-steps:     106	Reward:    311.159	Q-value:     -0.457
+03-12 09:19-14 CRITICAL EVALUATION	N-steps:     107	Men_Reward:   3506.464	IQM_Reward:   3506.464
+03-12 09:19-14 CRITICAL EVALUATION 	 starting state:0.07847375422716141	N-steps:     107	Reward:    320.278	Q-value:     -0.685
+03-12 09:19-14 CRITICAL EVALUATION	N-steps:     108	Men_Reward:   3396.146	IQM_Reward:   3396.146
+03-12 09:19-14 CRITICAL EVALUATION 	 starting state:0.03472603112459183	N-steps:     108	Reward:    384.922	Q-value:     -0.571
+03-12 09:19-15 CRITICAL EVALUATION	N-steps:     109	Men_Reward:    219.961	IQM_Reward:    219.961
+03-12 09:19-15 CRITICAL EVALUATION 	 starting state:0.08024825155735016	N-steps:     109	Reward:    148.461	Q-value:     -0.507
+03-12 09:19-15 CRITICAL EVALUATION	N-steps:     110	Men_Reward:    535.198	IQM_Reward:    535.198
+03-12 09:19-15 CRITICAL EVALUATION 	 starting state:0.07562463730573654	N-steps:     110	Reward:    278.002	Q-value:     -0.549
+03-12 09:19-15 CRITICAL EVALUATION	N-steps:     111	Men_Reward:   1735.588	IQM_Reward:   1735.588
+03-12 09:19-15 CRITICAL EVALUATION 	 starting state:0.062285203486680984	N-steps:     111	Reward:    324.401	Q-value:     -0.451
+03-12 09:19-16 CRITICAL EVALUATION	N-steps:     112	Men_Reward:   3474.525	IQM_Reward:   3474.525
+03-12 09:19-16 CRITICAL EVALUATION 	 starting state:0.09587106108665466	N-steps:     112	Reward:    353.704	Q-value:     -0.445
+03-12 09:19-16 CRITICAL EVALUATION	N-steps:     113	Men_Reward:   3461.377	IQM_Reward:   3461.377
+03-12 09:19-16 CRITICAL EVALUATION 	 starting state:0.0902659073472023	N-steps:     113	Reward:    284.015	Q-value:     -0.543
+03-12 09:19-17 CRITICAL EVALUATION	N-steps:     114	Men_Reward:   3614.724	IQM_Reward:   3614.724
+03-12 09:19-17 CRITICAL EVALUATION 	 starting state:0.038673192262649536	N-steps:     114	Reward:    340.615	Q-value:     -0.533
+03-12 09:19-18 CRITICAL EVALUATION	N-steps:     115	Men_Reward:   3573.683	IQM_Reward:   3573.683
+03-12 09:19-18 CRITICAL EVALUATION 	 starting state:0.06540202349424362	N-steps:     115	Reward:    365.688	Q-value:     -0.481
+03-12 09:19-18 CRITICAL EVALUATION	N-steps:     116	Men_Reward:   1916.222	IQM_Reward:   1916.222
+03-12 09:19-18 CRITICAL EVALUATION 	 starting state:0.06554003804922104	N-steps:     116	Reward:    285.124	Q-value:     -0.425
+03-12 09:19-19 CRITICAL EVALUATION	N-steps:     117	Men_Reward:   3778.599	IQM_Reward:   3778.599
+03-12 09:19-19 CRITICAL EVALUATION 	 starting state:0.06376739591360092	N-steps:     117	Reward:    359.287	Q-value:     -0.255
+03-12 09:19-19 CRITICAL EVALUATION	N-steps:     118	Men_Reward:   3651.121	IQM_Reward:   3651.121
+03-12 09:19-19 CRITICAL EVALUATION 	 starting state:0.033025678247213364	N-steps:     118	Reward:    316.502	Q-value:     -0.357
+03-12 09:19-20 CRITICAL EVALUATION	N-steps:     119	Men_Reward:   3844.606	IQM_Reward:   3844.606
+03-12 09:19-20 CRITICAL EVALUATION 	 starting state:0.07177671045064926	N-steps:     119	Reward:    319.037	Q-value:     -0.468
+03-12 09:19-20 CRITICAL EVALUATION	N-steps:     120	Men_Reward:   1796.803	IQM_Reward:   1796.803
+03-12 09:19-20 CRITICAL EVALUATION 	 starting state:0.06385457515716553	N-steps:     120	Reward:    288.722	Q-value:     -0.504
+03-12 09:19-21 CRITICAL EVALUATION	N-steps:     121	Men_Reward:   3476.212	IQM_Reward:   3476.212
+03-12 09:19-21 CRITICAL EVALUATION 	 starting state:0.07576027512550354	N-steps:     121	Reward:    318.250	Q-value:     -0.400
+03-12 09:19-21 CRITICAL EVALUATION	N-steps:     122	Men_Reward:    290.490	IQM_Reward:    290.490
+03-12 09:19-21 CRITICAL EVALUATION 	 starting state:0.06383521854877472	N-steps:     122	Reward:    168.090	Q-value:     -0.537
+03-12 09:19-22 CRITICAL EVALUATION	N-steps:     123	Men_Reward:   3811.686	IQM_Reward:   3811.686
+03-12 09:19-22 CRITICAL EVALUATION 	 starting state:0.07152143865823746	N-steps:     123	Reward:    343.216	Q-value:     -0.640
+03-12 09:19-22 CRITICAL EVALUATION	N-steps:     124	Men_Reward:   3783.932	IQM_Reward:   3783.932
+03-12 09:19-23 CRITICAL EVALUATION 	 starting state:0.055613771080970764	N-steps:     124	Reward:    350.016	Q-value:     -0.251
+03-12 09:19-23 CRITICAL EVALUATION	N-steps:     125	Men_Reward:   3575.811	IQM_Reward:   3575.811
+03-12 09:19-23 CRITICAL EVALUATION 	 starting state:0.0835130512714386	N-steps:     125	Reward:    343.458	Q-value:     -0.482
+03-12 09:19-23 CRITICAL EVALUATION	N-steps:     126	Men_Reward:   1723.591	IQM_Reward:   1723.591
+03-12 09:19-24 CRITICAL EVALUATION 	 starting state:0.04354676604270935	N-steps:     126	Reward:    355.014	Q-value:     -0.451
+03-12 09:19-24 CRITICAL EVALUATION	N-steps:     127	Men_Reward:   3512.820	IQM_Reward:   3512.820
+03-12 09:19-24 CRITICAL EVALUATION 	 starting state:0.044620804488658905	N-steps:     127	Reward:    321.901	Q-value:     -0.263
+03-12 09:19-25 CRITICAL EVALUATION	N-steps:     128	Men_Reward:   3479.729	IQM_Reward:   3479.729
+03-12 09:19-25 CRITICAL EVALUATION 	 starting state:0.09224486351013184	N-steps:     128	Reward:    303.323	Q-value:     -0.589
+03-12 09:19-25 CRITICAL EVALUATION	N-steps:     129	Men_Reward:   3396.394	IQM_Reward:   3396.394
+03-12 09:19-25 CRITICAL EVALUATION 	 starting state:0.05886129289865494	N-steps:     129	Reward:    268.393	Q-value:     -0.381
+03-12 09:19-26 CRITICAL EVALUATION	N-steps:     130	Men_Reward:   3696.500	IQM_Reward:   3696.500
+03-12 09:19-26 CRITICAL EVALUATION 	 starting state:0.068580761551857	N-steps:     130	Reward:    307.762	Q-value:     -0.612
+03-12 09:19-26 CRITICAL EVALUATION	N-steps:     131	Men_Reward:   1892.462	IQM_Reward:   1892.462
+03-12 09:19-26 CRITICAL EVALUATION 	 starting state:0.0735132172703743	N-steps:     131	Reward:    299.411	Q-value:     -0.310
+03-12 09:19-27 CRITICAL EVALUATION	N-steps:     132	Men_Reward:   3384.210	IQM_Reward:   3384.210
+03-12 09:19-27 CRITICAL EVALUATION 	 starting state:0.07765379548072815	N-steps:     132	Reward:    329.067	Q-value:     -0.456
+03-12 09:19-27 CRITICAL EVALUATION	N-steps:     133	Men_Reward:    352.802	IQM_Reward:    352.802
+03-12 09:19-27 CRITICAL EVALUATION 	 starting state:0.06357476860284805	N-steps:     133	Reward:    181.225	Q-value:     -0.467
+03-12 09:19-28 CRITICAL EVALUATION	N-steps:     134	Men_Reward:   3646.833	IQM_Reward:   3646.833
+03-12 09:19-28 CRITICAL EVALUATION 	 starting state:0.07671868056058884	N-steps:     134	Reward:    345.677	Q-value:     -0.626
+03-12 09:19-28 CRITICAL EVALUATION	N-steps:     135	Men_Reward:   3802.160	IQM_Reward:   3802.160
+03-12 09:19-29 CRITICAL EVALUATION 	 starting state:0.07048014551401138	N-steps:     135	Reward:    359.981	Q-value:     -0.527
+03-12 09:19-29 CRITICAL EVALUATION	N-steps:     136	Men_Reward:   3356.004	IQM_Reward:   3356.004
+03-12 09:19-29 CRITICAL EVALUATION 	 starting state:0.07284332066774368	N-steps:     136	Reward:    282.015	Q-value:     -0.494
+03-12 09:19-30 CRITICAL EVALUATION	N-steps:     137	Men_Reward:   3578.729	IQM_Reward:   3578.729
+03-12 09:19-30 CRITICAL EVALUATION 	 starting state:0.06627250462770462	N-steps:     137	Reward:    308.920	Q-value:     -0.494
+03-12 09:19-30 CRITICAL EVALUATION	N-steps:     138	Men_Reward:   3809.830	IQM_Reward:   3809.830
+03-12 09:19-30 CRITICAL EVALUATION 	 starting state:0.06286682188510895	N-steps:     138	Reward:    344.584	Q-value:     -0.339
+03-12 09:19-31 CRITICAL EVALUATION	N-steps:     139	Men_Reward:   3561.346	IQM_Reward:   3561.346
+03-12 09:19-31 CRITICAL EVALUATION 	 starting state:0.07700317353010178	N-steps:     139	Reward:    321.710	Q-value:     -0.374
+03-12 09:19-32 CRITICAL EVALUATION	N-steps:     140	Men_Reward:   3698.684	IQM_Reward:   3698.684
+03-12 09:19-32 CRITICAL EVALUATION 	 starting state:0.06989439576864243	N-steps:     140	Reward:    344.017	Q-value:     -0.438
+03-12 09:19-32 CRITICAL EVALUATION	N-steps:     141	Men_Reward:   3553.379	IQM_Reward:   3553.379
+03-12 09:19-32 CRITICAL EVALUATION 	 starting state:0.09038551896810532	N-steps:     141	Reward:    324.847	Q-value:     -0.397
+03-12 09:19-33 CRITICAL EVALUATION	N-steps:     142	Men_Reward:   3402.743	IQM_Reward:   3402.743
+03-12 09:19-33 CRITICAL EVALUATION 	 starting state:0.06370210647583008	N-steps:     142	Reward:    342.875	Q-value:     -0.394
+03-12 09:19-34 CRITICAL EVALUATION	N-steps:     143	Men_Reward:   3373.891	IQM_Reward:   3373.891
+03-12 09:19-34 CRITICAL EVALUATION 	 starting state:0.06114407256245613	N-steps:     143	Reward:    304.721	Q-value:     -0.511
+03-12 09:19-34 CRITICAL EVALUATION	N-steps:     144	Men_Reward:   3537.072	IQM_Reward:   3537.072
+03-12 09:19-34 CRITICAL EVALUATION 	 starting state:0.09351176023483276	N-steps:     144	Reward:    338.731	Q-value:     -0.625
+03-12 09:19-35 CRITICAL EVALUATION	N-steps:     145	Men_Reward:   2054.755	IQM_Reward:   2054.755
+03-12 09:19-35 CRITICAL EVALUATION 	 starting state:0.05549672245979309	N-steps:     145	Reward:    325.809	Q-value:     -0.355
+03-12 09:19-35 CRITICAL EVALUATION	N-steps:     146	Men_Reward:   3255.579	IQM_Reward:   3255.579
+03-12 09:19-35 CRITICAL EVALUATION 	 starting state:0.053344108164310455	N-steps:     146	Reward:    362.078	Q-value:     -0.313
+03-12 09:19-36 CRITICAL EVALUATION	N-steps:     147	Men_Reward:   3521.996	IQM_Reward:   3521.996
+03-12 09:19-36 CRITICAL EVALUATION 	 starting state:0.04469125345349312	N-steps:     147	Reward:    302.698	Q-value:     -0.299
+03-12 09:19-37 CRITICAL EVALUATION	N-steps:     148	Men_Reward:   3764.550	IQM_Reward:   3764.550
+03-12 09:19-37 CRITICAL EVALUATION 	 starting state:0.05139338597655296	N-steps:     148	Reward:    343.645	Q-value:     -0.422
+03-12 09:19-37 CRITICAL EVALUATION	N-steps:     149	Men_Reward:   3623.444	IQM_Reward:   3623.444
+03-12 09:19-37 CRITICAL EVALUATION 	 starting state:0.0802019014954567	N-steps:     149	Reward:    310.978	Q-value:     -0.412
+03-12 09:19-38 CRITICAL EVALUATION	N-steps:     150	Men_Reward:   3646.312	IQM_Reward:   3646.312
+03-12 09:19-38 CRITICAL EVALUATION 	 starting state:0.07074468582868576	N-steps:     150	Reward:    354.288	Q-value:     -0.367
+03-12 09:19-38 CRITICAL EVALUATION	N-steps:     151	Men_Reward:   3379.446	IQM_Reward:   3379.446
+03-12 09:19-39 CRITICAL EVALUATION 	 starting state:0.07791866362094879	N-steps:     151	Reward:    311.918	Q-value:     -0.323
+03-12 09:19-39 CRITICAL EVALUATION	N-steps:     152	Men_Reward:   3418.354	IQM_Reward:   3418.354
+03-12 09:19-39 CRITICAL EVALUATION 	 starting state:0.07215429842472076	N-steps:     152	Reward:    329.636	Q-value:     -0.442
+03-12 09:19-40 CRITICAL EVALUATION	N-steps:     153	Men_Reward:   3718.584	IQM_Reward:   3718.584
+03-12 09:19-40 CRITICAL EVALUATION 	 starting state:0.10156132280826569	N-steps:     153	Reward:    332.323	Q-value:     -0.471
+03-12 09:19-40 CRITICAL EVALUATION	N-steps:     154	Men_Reward:   3639.758	IQM_Reward:   3639.758
+03-12 09:19-40 CRITICAL EVALUATION 	 starting state:0.056318044662475586	N-steps:     154	Reward:    341.309	Q-value:     -0.247
+03-12 09:19-41 CRITICAL EVALUATION	N-steps:     155	Men_Reward:    960.700	IQM_Reward:    960.700
+03-12 09:19-41 CRITICAL EVALUATION 	 starting state:0.060297176241874695	N-steps:     155	Reward:    328.094	Q-value:     -0.524
+03-12 09:19-41 CRITICAL EVALUATION	N-steps:     156	Men_Reward:   3047.781	IQM_Reward:   3047.781
+03-12 09:19-41 CRITICAL EVALUATION 	 starting state:0.08142150938510895	N-steps:     156	Reward:    327.045	Q-value:     -0.368
+03-12 09:19-42 CRITICAL EVALUATION	N-steps:     157	Men_Reward:   3757.442	IQM_Reward:   3757.442
+03-12 09:19-42 CRITICAL EVALUATION 	 starting state:0.0745820477604866	N-steps:     157	Reward:    340.555	Q-value:     -0.436
+03-12 09:19-42 CRITICAL EVALUATION	N-steps:     158	Men_Reward:   1730.335	IQM_Reward:   1730.335
+03-12 09:19-43 CRITICAL EVALUATION 	 starting state:0.05124640464782715	N-steps:     158	Reward:    350.902	Q-value:     -0.382
+03-12 09:19-43 CRITICAL EVALUATION	N-steps:     159	Men_Reward:   3629.060	IQM_Reward:   3629.060
+03-12 09:19-43 CRITICAL EVALUATION 	 starting state:0.10525740683078766	N-steps:     159	Reward:    339.373	Q-value:     -0.418
+03-12 09:19-44 CRITICAL EVALUATION	N-steps:     160	Men_Reward:   2381.219	IQM_Reward:   2381.219
+03-12 09:19-44 CRITICAL EVALUATION 	 starting state:0.08364400267601013	N-steps:     160	Reward:    250.387	Q-value:     -0.298
+03-12 09:19-44 CRITICAL EVALUATION	N-steps:     161	Men_Reward:   3342.545	IQM_Reward:   3342.545
+03-12 09:19-44 CRITICAL EVALUATION 	 starting state:0.06878843903541565	N-steps:     161	Reward:    277.819	Q-value:     -0.480
+03-12 09:19-45 CRITICAL EVALUATION	N-steps:     162	Men_Reward:   3469.595	IQM_Reward:   3469.595
+03-12 09:19-45 CRITICAL EVALUATION 	 starting state:0.05010072886943817	N-steps:     162	Reward:    293.000	Q-value:     -0.454
+03-12 09:19-45 CRITICAL EVALUATION	N-steps:     163	Men_Reward:   2730.050	IQM_Reward:   2730.050
+03-12 09:19-45 CRITICAL EVALUATION 	 starting state:0.06471523642539978	N-steps:     163	Reward:    348.741	Q-value:     -0.423
+03-12 09:19-46 CRITICAL EVALUATION	N-steps:     164	Men_Reward:    932.899	IQM_Reward:    932.899
+03-12 09:19-46 CRITICAL EVALUATION 	 starting state:0.05246198922395706	N-steps:     164	Reward:    318.811	Q-value:     -0.393
+03-12 09:19-46 CRITICAL EVALUATION	N-steps:     165	Men_Reward:   1201.461	IQM_Reward:   1201.461
+03-12 09:19-46 CRITICAL EVALUATION 	 starting state:0.05742738023400307	N-steps:     165	Reward:    363.905	Q-value:     -0.317
+03-12 09:19-47 CRITICAL EVALUATION	N-steps:     166	Men_Reward:   3569.822	IQM_Reward:   3569.822
+03-12 09:19-47 CRITICAL EVALUATION 	 starting state:0.0553540401160717	N-steps:     166	Reward:    316.225	Q-value:     -0.191
+03-12 09:19-47 CRITICAL EVALUATION	N-steps:     167	Men_Reward:   1460.801	IQM_Reward:   1460.801
+03-12 09:19-47 CRITICAL EVALUATION 	 starting state:0.05159075930714607	N-steps:     167	Reward:    329.347	Q-value:     -0.664
+03-12 09:19-48 CRITICAL EVALUATION	N-steps:     168	Men_Reward:   3367.846	IQM_Reward:   3367.846
+03-12 09:19-48 CRITICAL EVALUATION 	 starting state:0.06775720417499542	N-steps:     168	Reward:    234.260	Q-value:     -0.323
+03-12 09:19-48 CRITICAL EVALUATION	N-steps:     169	Men_Reward:   3446.152	IQM_Reward:   3446.152
+03-12 09:19-48 CRITICAL EVALUATION 	 starting state:0.09761782735586166	N-steps:     169	Reward:    352.046	Q-value:     -0.465
+03-12 09:19-49 CRITICAL EVALUATION	N-steps:     170	Men_Reward:   3620.620	IQM_Reward:   3620.620
+03-12 09:19-49 CRITICAL EVALUATION 	 starting state:0.04989999905228615	N-steps:     170	Reward:    330.152	Q-value:     -0.518
+03-12 09:19-49 CRITICAL EVALUATION	N-steps:     171	Men_Reward:   3821.072	IQM_Reward:   3821.072
+03-12 09:19-50 CRITICAL EVALUATION 	 starting state:0.07551086694002151	N-steps:     171	Reward:    360.949	Q-value:     -0.310
+03-12 09:19-50 CRITICAL EVALUATION	N-steps:     172	Men_Reward:    621.042	IQM_Reward:    621.042
+03-12 09:19-50 CRITICAL EVALUATION 	 starting state:0.08758978545665741	N-steps:     172	Reward:    281.553	Q-value:     -0.614
+03-12 09:19-50 CRITICAL EVALUATION	N-steps:     173	Men_Reward:   3765.375	IQM_Reward:   3765.375
+03-12 09:19-50 CRITICAL EVALUATION 	 starting state:0.07406283915042877	N-steps:     173	Reward:    326.446	Q-value:     -0.529
+03-12 09:19-51 CRITICAL EVALUATION	N-steps:     174	Men_Reward:   3648.388	IQM_Reward:   3648.388
+03-12 09:19-51 CRITICAL EVALUATION 	 starting state:0.061196353286504745	N-steps:     174	Reward:    346.871	Q-value:     -0.417
+03-12 09:19-52 CRITICAL EVALUATION	N-steps:     175	Men_Reward:   3700.503	IQM_Reward:   3700.503
+03-12 09:19-52 CRITICAL EVALUATION 	 starting state:0.0617717020213604	N-steps:     175	Reward:    336.824	Q-value:     -0.492
+03-12 09:19-52 CRITICAL EVALUATION	N-steps:     176	Men_Reward:   3892.903	IQM_Reward:   3892.903
+03-12 09:19-52 CRITICAL EVALUATION 	 starting state:0.05485222488641739	N-steps:     176	Reward:    354.446	Q-value:     -0.542
+03-12 09:19-53 CRITICAL EVALUATION	N-steps:     177	Men_Reward:   3626.877	IQM_Reward:   3626.877
+03-12 09:19-53 CRITICAL EVALUATION 	 starting state:0.08532945066690445	N-steps:     177	Reward:    324.143	Q-value:     -0.353
+03-12 09:19-54 CRITICAL EVALUATION	N-steps:     178	Men_Reward:   3527.773	IQM_Reward:   3527.773
+03-12 09:19-54 CRITICAL EVALUATION 	 starting state:0.08528628945350647	N-steps:     178	Reward:    261.282	Q-value:     -0.568
+03-12 09:19-54 CRITICAL EVALUATION	N-steps:     179	Men_Reward:   3716.033	IQM_Reward:   3716.033
+03-12 09:19-54 CRITICAL EVALUATION 	 starting state:0.07638029754161835	N-steps:     179	Reward:    368.261	Q-value:     -0.504
+03-12 09:19-55 CRITICAL EVALUATION	N-steps:     180	Men_Reward:   1368.748	IQM_Reward:   1368.748
+03-12 09:19-55 CRITICAL EVALUATION 	 starting state:0.07241298258304596	N-steps:     180	Reward:    278.319	Q-value:     -0.394
+03-12 09:19-55 CRITICAL EVALUATION	N-steps:     181	Men_Reward:   3572.723	IQM_Reward:   3572.723
+03-12 09:19-55 CRITICAL EVALUATION 	 starting state:0.07103274017572403	N-steps:     181	Reward:    301.559	Q-value:     -0.298
+03-12 09:19-56 CRITICAL EVALUATION	N-steps:     182	Men_Reward:   3490.361	IQM_Reward:   3490.361
+03-12 09:19-56 CRITICAL EVALUATION 	 starting state:0.04525308683514595	N-steps:     182	Reward:    320.955	Q-value:     -0.473
+03-12 09:19-57 CRITICAL EVALUATION	N-steps:     183	Men_Reward:   3605.266	IQM_Reward:   3605.266
+03-12 09:19-57 CRITICAL EVALUATION 	 starting state:0.0927349105477333	N-steps:     183	Reward:    336.169	Q-value:     -0.537
+03-12 09:19-57 CRITICAL EVALUATION	N-steps:     184	Men_Reward:   3526.431	IQM_Reward:   3526.431
+03-12 09:19-57 CRITICAL EVALUATION 	 starting state:0.030007004737854004	N-steps:     184	Reward:    340.006	Q-value:     -0.592
+03-12 09:19-58 CRITICAL EVALUATION	N-steps:     185	Men_Reward:   3568.726	IQM_Reward:   3568.726
+03-12 09:19-58 CRITICAL EVALUATION 	 starting state:0.07546358555555344	N-steps:     185	Reward:    338.145	Q-value:     -0.399
+03-12 09:19-58 CRITICAL EVALUATION	N-steps:     186	Men_Reward:   3668.221	IQM_Reward:   3668.221
+03-12 09:19-58 CRITICAL EVALUATION 	 starting state:0.08291321247816086	N-steps:     186	Reward:    353.656	Q-value:     -0.476
+03-12 09:19-59 CRITICAL EVALUATION	N-steps:     187	Men_Reward:   3470.222	IQM_Reward:   3470.222
+03-12 09:19-59 CRITICAL EVALUATION 	 starting state:0.05978192389011383	N-steps:     187	Reward:    303.935	Q-value:     -0.528
+03-12 09:19-59 CRITICAL EVALUATION	N-steps:     188	Men_Reward:    828.160	IQM_Reward:    828.160
+03-12 09:20-00 CRITICAL EVALUATION 	 starting state:0.04142331704497337	N-steps:     188	Reward:    278.217	Q-value:     -0.299
+03-12 09:20-00 CRITICAL EVALUATION	N-steps:     189	Men_Reward:   3680.009	IQM_Reward:   3680.009
+03-12 09:20-00 CRITICAL EVALUATION 	 starting state:0.06860337406396866	N-steps:     189	Reward:    326.577	Q-value:     -0.292
+03-12 09:20-01 CRITICAL EVALUATION	N-steps:     190	Men_Reward:   3782.151	IQM_Reward:   3782.151
+03-12 09:20-01 CRITICAL EVALUATION 	 starting state:0.07426758855581284	N-steps:     190	Reward:    314.406	Q-value:     -0.463
+03-12 09:20-01 CRITICAL EVALUATION	N-steps:     191	Men_Reward:   3555.137	IQM_Reward:   3555.137
+03-12 09:20-01 CRITICAL EVALUATION 	 starting state:0.09870871156454086	N-steps:     191	Reward:    334.775	Q-value:     -0.461
+03-12 09:20-02 CRITICAL EVALUATION	N-steps:     192	Men_Reward:   3234.759	IQM_Reward:   3234.759
+03-12 09:20-02 CRITICAL EVALUATION 	 starting state:0.06745665520429611	N-steps:     192	Reward:    296.601	Q-value:     -0.455
+03-12 09:20-03 CRITICAL EVALUATION	N-steps:     193	Men_Reward:   3338.600	IQM_Reward:   3338.600
+03-12 09:20-03 CRITICAL EVALUATION 	 starting state:0.07056329399347305	N-steps:     193	Reward:    338.845	Q-value:     -0.416
+03-12 09:20-03 CRITICAL EVALUATION	N-steps:     194	Men_Reward:   3802.072	IQM_Reward:   3802.072
+03-12 09:20-03 CRITICAL EVALUATION 	 starting state:0.09437503665685654	N-steps:     194	Reward:    340.904	Q-value:     -0.517
+03-12 09:20-04 CRITICAL EVALUATION	N-steps:     195	Men_Reward:   3761.584	IQM_Reward:   3761.584
+03-12 09:20-04 CRITICAL EVALUATION 	 starting state:0.05215395241975784	N-steps:     195	Reward:    313.753	Q-value:     -0.422
+03-12 09:20-05 CRITICAL EVALUATION	N-steps:     196	Men_Reward:   3890.396	IQM_Reward:   3890.396
+03-12 09:20-05 CRITICAL EVALUATION 	 starting state:0.03943981975317001	N-steps:     196	Reward:    381.424	Q-value:     -0.434
+03-12 09:20-05 CRITICAL EVALUATION	N-steps:     197	Men_Reward:   2297.886	IQM_Reward:   2297.886
+03-12 09:20-05 CRITICAL EVALUATION 	 starting state:0.05049509555101395	N-steps:     197	Reward:    348.739	Q-value:     -0.425
+03-12 09:20-06 CRITICAL EVALUATION	N-steps:     198	Men_Reward:   1080.424	IQM_Reward:   1080.424
+03-12 09:20-06 CRITICAL EVALUATION 	 starting state:0.07592464238405228	N-steps:     198	Reward:    191.559	Q-value:     -0.609
+03-12 09:20-06 CRITICAL EVALUATION	N-steps:     199	Men_Reward:   1030.197	IQM_Reward:   1030.197
+03-12 09:20-06 CRITICAL EVALUATION 	 starting state:0.0553596206009388	N-steps:     199	Reward:    304.882	Q-value:     -0.485
+03-12 09:20-07 CRITICAL EVALUATION	N-steps:     199	Men_Reward:   3566.551	IQM_Reward:   3566.551
+03-12 09:20-07 CRITICAL EVALUATION 	 starting state:0.07107296586036682	N-steps:     199	Reward:    355.174	Q-value:     -0.383
+03-12 09:20-07 INFO     Training time: 110.21 seconds
