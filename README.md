@@ -45,8 +45,10 @@ Each log filename encodes the experimental configuration:
 
 ### Example Usage for Recursuve Baselines
 python main.py --model_type lastlayervb --baseline_category recursive  --num_portions 6 
+
 python main.py --model_type fullvb --baseline_category recursive  --num_portions 2 
 
 ### Example Usage for Non-Recursuve Baselines
 python main.py --model_type fullvb --baseline_category nonrecursive  --loss_type  informative
+
 python main.py --model_type fullvb --baseline_category nonrecursive  --loss_type  noninformative
